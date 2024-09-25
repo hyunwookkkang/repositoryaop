@@ -68,7 +68,7 @@ function fncGetProductList(currentPage) {
 <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px;">
 	<tr>
 		<td align="right">
-        <select name="searchCondition" class="ct_input_g" style="width:80px" hidden >
+        <select name="searchCondition" class="ct_input_g" style="width:80px" >
         	<option value="0"  ${ ! empty search.searchCondition && search.searchCondition==0 ? "selected" :'' }>상품번호</option>
         	<option value="1"  ${ ! empty search.searchCondition && search.searchCondition==1 ? "selected" :''}>상품명</option>
         	<option value="2"  ${ ! empty search.searchCondition && search.searchCondition==2 ? "selected" :''}>상품가격</option>

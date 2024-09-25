@@ -31,6 +31,9 @@ public class ProductDaoImpl implements ProductDao{
 
 	///Method
 	public void addProduct(Product product) throws Exception {
+		String manu = product.getManuDate().replace("-","");
+		product.setManuDate(manu);
+		System.out.println(manu);
 		sqlSession.insert("ProductMapper.addProduct", product);
 	}
 

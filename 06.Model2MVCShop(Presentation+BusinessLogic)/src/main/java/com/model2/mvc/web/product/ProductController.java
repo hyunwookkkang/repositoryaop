@@ -50,14 +50,14 @@ public class ProductController {
 	
 	
 	@RequestMapping("/addProduct.do")
-	public String addProduct( @ModelAttribute("product") Product product ) throws Exception {
+	public String addProduct( @ModelAttribute("product") Product product,Model model ) throws Exception {
 
 		System.out.println("/addProduct.do");
 		//ProductService productService;
 		//Business Logic
 		productService.addProduct(product);
-		
-		return "redirect:/product/addProductView.jsp";
+		model.addAttribute("vo", product);
+		return "forward:/product/informProduct.jsp";
 	}
 	//addProduct.do 구현완료
 	
@@ -69,7 +69,7 @@ public class ProductController {
 		//Business Logic
 		Product product = productService.getProduct(prodNo);
 		// Model 과 View 연결
-		model.addAttribute("product", product);
+		model.addAttribute("vo", product);
 		//안되면 product를 vo로 체인지
 		return "forward:/product/getProduct.jsp";
 	}

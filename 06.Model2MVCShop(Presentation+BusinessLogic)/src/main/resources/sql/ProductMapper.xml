@@ -21,7 +21,7 @@
 	<insert 	id="addProduct"		parameterType="product" >
 	 	INSERT
 		INTO product( prod_no , prod_name , prod_detail , manufacture_day , price,IMAGE_FILE, reg_date) 
-		VALUES (#{prodNo}, #{prodName}, #{prodDetail}, #{manuDate}, #{price},#{fileName}, SYSDATE)
+		VALUES (seq_product_prod_no.nextval, #{prodName}, #{prodDetail}, #{manuDate}, #{price},#{fileName}, SYSDATE)
 	 </insert>
 	 
 	 <!-- SQL : SELECT ONE -->
