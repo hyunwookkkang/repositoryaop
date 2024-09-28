@@ -14,7 +14,8 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener	</listener-class>
 	</listener>		
-	 
+	 <!-- 현: listener는 servletcontext에서 특정 이벤트를 처리하는 listner를 정의 즉 위의 내용은 applicationcontext를 생성하고 관리하는 역할applicationcontext는
+	 비지니스 로직과 관련된 bean을 관리하는데 사용- 아래에 ~~다음같은 4개의 파일을 로드한다.  -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>

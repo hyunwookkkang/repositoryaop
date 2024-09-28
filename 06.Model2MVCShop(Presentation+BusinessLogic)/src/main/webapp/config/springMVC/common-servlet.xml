@@ -19,6 +19,7 @@
 		<context:exclude-filter 	type="annotation" 	expression="org.springframework.stereotype.Service"/>
 		<context:exclude-filter 	type="annotation" 	expression="org.springframework.stereotype.Repository"/>
 	</context:component-scan>            
+	<!-- 현:스캔할 annotation을 위에서 지정 -->
 
       
 	 <!-- ::  Annotation 지원 HandlerMapping 선언  -->
@@ -35,7 +36,7 @@
 	 	 <property name="order" value="0"/>
 		<property name="interceptors" ref="logonCheckInterceptor"/>
 	 </bean>
-	 
+	 <!-- 현:HandlerMapping은 field에는 order와 interceptor가 존재 - 단일인입접에서 request를 받으면 HM이 명령이 뭔지 구분해준다. request를 받을 떄마다 확인 -->
 	 <!--  :: Interceptor 선언 : 로그인 유무확인. -->
 	<bean id="logonCheckInterceptor"	class="com.model2.mvc.common.web.LogonCheckInterceptor" />
 	<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->					
@@ -44,7 +45,7 @@
 	<!--  :: ViewResolver 선언 -->	
     <bean id="viewResolver"
 				class="org.springframework.web.servlet.view.InternalResourceViewResolver" />
-	
+
 
 	<!-- 	:: exception resolver  선언 :: 서술적 / 선언적 예외처리 
 			:: Servlet 에서의 선언적 예외처리를 다시 생각하며....  -->
